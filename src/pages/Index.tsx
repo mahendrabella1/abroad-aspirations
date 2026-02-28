@@ -23,13 +23,17 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
-      <header className="w-full px-6 md:px-12 py-4 flex items-center justify-between bg-card border-b border-border sticky top-0 z-50">
-        <img src={logo} alt="OneGrasp" className="h-20" />
-        <nav className="flex items-center gap-2">
-          <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-            Home
-          </button>
-        </nav>
+      <header className="w-full px-6 md:px-12 py-3 flex items-center justify-between bg-card border-b border-border sticky top-0 z-50">
+        <img src={logo} alt="OneGrasp" className="h-16 md:h-20" />
+        <div className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+          <a href="mailto:support@onegrasp.com" className="hover:text-primary transition-colors">
+            support@onegrasp.com
+          </a>
+          <span>+91 8977760441 / 42 / 43</span>
+          <a href="https://onegrasp.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            onegrasp.com
+          </a>
+        </div>
       </header>
 
       {/* Hero */}
