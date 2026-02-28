@@ -63,6 +63,7 @@ export default function ProfilerPage() {
   };
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleSubmit = async () => {
     const errs = validate();
@@ -131,6 +132,7 @@ export default function ProfilerPage() {
           "You may also reach us at +91-89777 60441/42/43 or visit onegrasp.com",
           { duration: 8000 }
         );
+        setShowThankYou(true);
       } else {
         throw new Error("Submission failed");
       }
@@ -170,6 +172,36 @@ export default function ProfilerPage() {
 
       {/* Main content */}
       <main className="flex-1 overflow-y-auto">
+        {showThankYou && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-8 text-center relative">
+              <button
+                onClick={() => setShowThankYou(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+              >
+                ✕
+              </button>
+              <img src="/logo.png" alt="OneGrasp" className="mx-auto w-24 h-24 mb-4" />
+              <h2 className="text-2xl font-bold mb-2">Thank you for your submission!</h2>
+              <p className="text-md text-gray-700 mb-4">
+                The OneGrasp team will be reaching out to you shortly to assist you further.
+              </p>
+              <p className="text-sm text-gray-600 mb-6">
+                In the meantime, you may contact us for a complimentary consultation at <br />
+                <a href="tel:+918977760441" className="text-blue-600 hover:underline">+91-89777 60441/42/43</a> or
+                email us at <a href="mailto:support@onegrasp.com" className="text-blue-600 hover:underline">support@onegrasp.com</a>.
+              </p>
+              <a
+                href="https://onegrasp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-primary/90 transition"
+              >
+                Visit onegrasp.com
+              </a>
+            </div>
+          </div>
+        )}
         {/* Top bar */}
         <div className="sticky top-0 z-30 bg-card border-b border-border px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
