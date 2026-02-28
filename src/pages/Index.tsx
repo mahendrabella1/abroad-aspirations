@@ -24,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
       <header className="w-full px-6 md:px-12 py-4 flex items-center justify-between bg-card border-b border-border sticky top-0 z-50">
-        <img src={logo} alt="OneGrasp" className="h-10" />
+        <img src={logo} alt="OneGrasp" className="h-20" />
         <nav className="flex items-center gap-2">
           <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
             Home
