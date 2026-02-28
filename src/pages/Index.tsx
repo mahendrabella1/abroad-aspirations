@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GraduationCap, BookOpen, FlaskConical, ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/onegrasp_logo.png";
 
 const programs = [
   { label: "Bachelors", icon: BookOpen, desc: "Undergraduate Programs" },
@@ -23,13 +24,10 @@ const Index = () => {
     <div className="min-h-screen flex flex-col bg-background">
       {/* Header */}
       <header className="w-full px-6 md:px-12 py-4 flex items-center justify-between bg-card border-b border-border sticky top-0 z-50">
-        <div className="text-2xl font-extrabold text-gradient">OneGrasp</div>
+        <img src={logo} alt="OneGrasp" className="h-10" />
         <nav className="flex items-center gap-2">
           <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
             Home
-          </button>
-          <button className="px-5 py-2 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-opacity">
-            Login
           </button>
         </nav>
       </header>
